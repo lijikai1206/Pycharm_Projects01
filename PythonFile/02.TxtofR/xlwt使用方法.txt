@@ -1,0 +1,42 @@
+  1、常用单元格中的数据类型
+
+       0 empty,1 string（text）, 2 number, 3 date, 4 boolean, 5 error， 6 blank
+2、导入模块
+
+      import xlwt
+
+3、新建文档写入（暂时还没搞懂怎么编辑）
+
+      wbk = xlwt.Workbook()
+	  
+	 矩阵信息
+	 BackSFRTest              CameraSFRAlgorithm              Demo_ir              667             lux4
+	 BackSFRTest              CameraSFRAlgorithm              Demo_x              667              lux3
+	 CameraFlash              CameraSFRAlgorithm              Demo_y              23               lux2
+	 BackSFRTest2             CameraSFRAlgorithm              Demo_z              4563             lux1
+4、常用的函数
+
+        1）获取book中一个工作表
+
+              sheet = wbk.add_sheet(sheetname， cell_overwrite_ok = False)  #新建一个sheet，默认不允许覆盖
+        2）行的宽度操作
+
+             tall_style = xlwt.easyxf('font:height 720;') # 36pt,类型小初的字号
+             sheet.row(index).set_style(tall_style)
+            
+            行宽是在单元格的样式中设置的，你可以通过自动换行通过输入文字的多少来确定行高
+
+        3）列(colnum)的宽度操作
+
+            sheet.col(index)   #返回列对象xlwt.Column.Column，可以设置列的一系列参数
+            sheet.col(index).get_width()   #获取列的宽度
+            sheet.col(index).set_style(style)   #设置列的style
+            sheet.col(index).set_width(width)   #设置列的宽度     
+
+            xlwt中列宽的值表示方法：默认字体0的1/256为衡量单位。xlwt创建时使用的默认宽度为2962
+         4）单元格的操作
+
+         sheet.write( r, c, label='', style=<xlwt.Style.XFStyle object>)   # 向单元格写入数据
+        5）文件保存
+
+        wkb.save('example.xls')   #不支持xlsx格式的文件

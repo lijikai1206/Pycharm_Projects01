@@ -1,0 +1,4 @@
+#!C:\Users\lijik\PycharmProjects\untitled\venv\Scripts\python.exe
+import sys
+from distutils2.run import main
+sys.exit(main())
