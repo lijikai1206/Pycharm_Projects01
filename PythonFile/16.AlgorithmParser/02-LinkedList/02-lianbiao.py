@@ -24,3 +24,31 @@ class Solution(object):
             fast=fast.next
             slow=slow.next
         return False
+
+
+"""
+# Definition for a Node.
+class Node:
+    def __init__(self, x: int, next: 'Node' = None, random: 'Node' = None):
+        self.val = int(x)
+        self.next = next
+        self.random = random
+"""
+
+# 深度拷贝
+class Solution2:
+    def copyRandomList(self, head: 'Node') -> 'Node':
+        self.visited = {}
+        result = self.dfs(head)
+        return result
+
+    def dfs(self, head):
+        if not head: return None
+        if head in self.visited:
+            return self.visited[head]
+        # 创建新结点
+        copy = Node(head.val, None, None)
+        self.visited[head] = copy
+        copy.next = self.dfs(head.next)
+        copy.random = self.dfs(head.random)
+        return copy

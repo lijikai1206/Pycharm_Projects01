@@ -7,10 +7,8 @@
     <content url="file://$MODULE_DIR$" />
     <content url="file://D:/Python/TTS学习笔记/QQ资料/第三阶段/16. project/Day01/Blog1" />
     <content url="file://D:/Python/part_03" />
+    <content url="file://D:/Python/part_04" />
     <orderEntry type="jdk" jdkName="Python 3.7 (PythonFile)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-  </component>
-  <component name="TestRunnerService">
-    <option name="PROJECT_TEST_RUNNER" value="Unittests" />
   </component>
 </module>
